@@ -1,15 +1,19 @@
-package domain;
+package domain.my_implementation;
 
-import domain._BinarySearchTree;
+import domain.my_implementation._BinarySearchTree;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class _BinarySearchTreeTest {
 
     @Test
-    void validateMyBinarySearchTree(){
+    void validateMyBinarySearchTree() {
         _BinarySearchTree bst = new _BinarySearchTree();
         assertEquals("_BinarySearchTree", bst.getClass().getSimpleName());
         assertNotNull(bst);
@@ -58,7 +62,7 @@ class _BinarySearchTreeTest {
     }
 
     @Test
-    void givenFilledBinarySearchTree_whenSearchAValidValue_thenReturnTrue(){
+    void givenFilledBinarySearchTree_whenSearchAValidValue_thenReturnTrue() {
         _BinarySearchTree bst = new _BinarySearchTree();
         bst.insert(7);
         bst.insert(9);
@@ -71,7 +75,7 @@ class _BinarySearchTreeTest {
     }
 
     @Test
-    void givenFilledBinarySearchTree_whenSearchAnInvalidValue_thenReturnTrue(){
+    void givenFilledBinarySearchTree_whenSearchAnInvalidValue_thenReturnTrue() {
         _BinarySearchTree bst = new _BinarySearchTree();
         bst.insert(7);
         bst.insert(9);

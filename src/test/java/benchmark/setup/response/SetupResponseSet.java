@@ -5,31 +5,31 @@ import java.util.Map;
 public abstract class SetupResponseSet extends ResponseSet {
 
     public static Map<Object, Long> addingMap() {
-        addingMapOn(hashSet);
-        addingMapOn(linkedHashSet);
-        addingMapOn(treeSet);
-        return insertMap;
+        addAll(hashSet);
+        addAll(linkedHashSet);
+        addAll(treeSet);
+        return insert;
     }
 
     public static Map<Object, Long> removingMap() {
-        removingMapOn(hashSet);
-        removingMapOn(linkedHashSet);
-        removingMapOn(treeSet);
-        return deleteMap;
+        removeAll(hashSet);
+        removeAll(linkedHashSet);
+        removeAll(treeSet);
+        return delete;
     }
 
     public static Map<Object, Long> containsMap() {
-        containsMapOn(hashSet);
-        containsMapOn(linkedHashSet);
-        containsMapOn(treeSet);
-        return containsMap;
+        contains(hashSet);
+        contains(linkedHashSet);
+        contains(treeSet);
+        return contains;
     }
 
-    public static Map<Object, Long> nextMap() {
-        nextMapOn(hashSet);
-        nextMapOn(linkedHashSet);
-        nextMapOn(treeSet);
-        return nextMap;
+    public static Map<Object, Long> next() {
+        next(hashSet);
+        next(linkedHashSet);
+        next(treeSet);
+        return next;
     }
 
 }

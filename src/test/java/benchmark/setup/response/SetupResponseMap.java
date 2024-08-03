@@ -5,29 +5,29 @@ import java.util.Map;
 public class SetupResponseMap extends ResponseMap {
 
     public static Map<Object, Long> puttingMap() {
-        puttingMapOn(hashMap);
-        puttingMapOn(linkedHashMap);
-        puttingMapOn(treeMap);
-        return insertMap;
+        putAll(hashMap);
+        putAll(linkedHashMap);
+        putAll(treeMap);
+        return insert;
     }
     public static Map<Object, Long> gettingMap() {
-        gettingMapOn(hashMap);
-        gettingMapOn(linkedHashMap);
-        gettingMapOn(treeMap);
-        return readMapByIndex;
+        getByIndex(hashMap);
+        getByIndex(linkedHashMap);
+        getByIndex(treeMap);
+        return readByIndex;
     }
     public static Map<Object, Long> removingMap() {
-        removingMapOn(hashMap);
-        removingMapOn(linkedHashMap);
-        removingMapOn(treeMap);
-        return deleteMap;
+        removeByIndex(hashMap);
+        removeByIndex(linkedHashMap);
+        removeByIndex(treeMap);
+        return delete;
     }
 
     public static Map<Object, Long> containsMap() {
-        containsMapOn(hashMap);
-        containsMapOn(linkedHashMap);
-        containsMapOn(treeMap);
-        return containsMap;
+        contains(hashMap);
+        contains(linkedHashMap);
+        contains(treeMap);
+        return contains;
     }
 
 }

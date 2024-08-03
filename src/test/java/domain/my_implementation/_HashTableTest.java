@@ -1,6 +1,6 @@
-package domain;
+package domain.my_implementation;
 
-import domain._HashTable;
+import domain.my_implementation._HashTable;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

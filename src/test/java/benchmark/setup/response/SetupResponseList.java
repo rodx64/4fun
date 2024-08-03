@@ -4,41 +4,36 @@ import java.util.Map;
 
 public class SetupResponseList extends ResponseList {
 
-    public static Map<Object, Long> addingMap(){
-        putOnAddList(arrayList);
-        putOnAddList(linkedList);
-        return insertMap;
+    public static Map<Object, Long> addingAll(){
+        addAll(arrayList);
+        addAll(linkedList);
+        return insert;
     }
-    public static Map<Object, Long> addingFirstMap(){
-        putOnFirstPositionList(arrayList);
-        putOnFirstPositionList(linkedList);
-        return insertFirstMap;
+    public static Map<Object, Long> addingByIndex(){
+        addByIndex(arrayList);
+        addByIndex(linkedList);
+        return insertFirst;
     }
     public static Map<Object, Long> lookingByIndex(){
-        putOnGetList(arrayList);
-        putOnGetList(linkedList);
-        return readMapByIndex;
+        getByIndex(arrayList);
+        getByIndex(linkedList);
+        return readByIndex;
     }
     public static Map<Object, Long> lookingByValue(){
-        putOnGetListByValue(arrayList);
-        putOnGetListByValue(linkedList);
-        return readMapByValue;
+        contains(arrayList);
+        contains(linkedList);
+        return readByValue;
     }
 
-    public static Map<Object, Long> removingFirstMap(){
-        putOnRemoveFirstList(arrayList);
-        putOnRemoveFirstList(linkedList);
-        return deleteFirstMap;
+    public static Map<Object, Long> removingFirst(){
+        removeFirst(arrayList);
+        removeFirst(linkedList);
+        return deleteFirst;
     }
-    public static Map<Object, Long> removingLastMap(){
-        putOnRemoveLastList(arrayList);
-        putOnRemoveLastList(linkedList);
-        return deleteLastMap;
-    }
-    public static Map<Object, Long> removingMiddleMap(){
-        putOnRemoveMiddleList(arrayList);
-        putOnRemoveMiddleList(linkedList);
-        return deleteMiddleMap;
+    public static Map<Object, Long> removingLast(){
+        removeLast(arrayList);
+        removeLast(linkedList);
+        return deleteLast;
     }
 }
 

@@ -1,6 +1,6 @@
-package domain;
+package domain.my_implementation;
 
-import domain._Graph;
+import domain.my_implementation._Graph;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

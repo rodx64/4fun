@@ -5,26 +5,26 @@ import java.util.Map;
 public abstract class SetupResponseQueue extends ResponseQueue {
 
     public static Map<Object, Long> addingMap() {
-        offerMapOn(arrayDeque);
-        offerMapOn(priorityQueue);
-        return insertMap;
+        offer(arrayDeque);
+        offer(priorityQueue);
+        return insert;
     }
     public static Map<Object, Long> readFirst() {
-        peekMapOn(arrayDeque);
-        peekMapOn(priorityQueue);
-        return readMapByIndex;
+        peek(arrayDeque);
+        peek(priorityQueue);
+        return readByIndex;
     }
 
     public static Map<Object, Long> removingHeadMap() {
-        pollMapOn(arrayDeque);
-        pollMapOn(priorityQueue);
-        return deleteFirstMap;
+        poll(arrayDeque);
+        poll(priorityQueue);
+        return deleteFirst;
     }
 
     public static Map<Object, Long> removingMap() {
-        removingMapOn(arrayDeque);
-        removingMapOn(priorityQueue);
-        return deleteMap;
+        removeByValue(arrayDeque);
+        removeByValue(priorityQueue);
+        return delete;
     }
 
 }

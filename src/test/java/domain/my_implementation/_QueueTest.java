@@ -1,6 +1,6 @@
-package domain;
+package domain.my_implementation;
 
-import domain._Queue;
+import domain.my_implementation._Queue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

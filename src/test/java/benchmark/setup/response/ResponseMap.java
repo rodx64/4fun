@@ -13,42 +13,41 @@ public class ResponseMap extends Response {
     protected final static Map<Integer, String> linkedHashMap = new LinkedHashMap<>();
     protected final static Map<Integer, String> treeMap = new TreeMap<>();
 
-    protected static void puttingMapOn(Map<Integer, String> map) {
+    protected static void putAll(Map<Integer, String> map) {
         startTime = System.nanoTime();
         for (int i = 0; i < MAX_SIZE; i++) {
             map.put(i, "Test" + i);
         }
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        insertMap.put(map.getClass().getSimpleName(), duration);
+        insert.put(map.getClass().getSimpleName(), duration);
     }
 
-    protected static void gettingMapOn(Map<Integer, String> map) {
+    protected static void getByIndex(Map<Integer, String> map) {
+        int index = MAX_SIZE / 3;
         startTime = System.nanoTime();
-        for (int i = 0; i < MAX_SIZE; i++) {
-            map.get(i);
-        }
+        map.get(index);
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        readMapByIndex.put(map.getClass().getSimpleName(), duration);
+        readByIndex.put(map.getClass().getSimpleName(), duration);
     }
 
-    protected static void removingMapOn(Map<Integer, String> map) {
+    protected static void removeByIndex(Map<Integer, String> map) {
         startTime = System.nanoTime();
         for (int i = 0; i < MAX_SIZE; i++) {
             map.remove(i);
         }
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        deleteMap.put(map.getClass().getSimpleName(), duration);
+        delete.put(map.getClass().getSimpleName(), duration);
     }
 
-    protected static void containsMapOn(Map<Integer, String> map) {
+    protected static void contains(Map<Integer, String> map) {
         startTime = System.nanoTime();
         map.containsKey(MAX_SIZE / 2);
         endTime = System.nanoTime();
         duration = (endTime - startTime);
-        containsMap.put(map.getClass().getSimpleName(), duration);
+        contains.put(map.getClass().getSimpleName(), duration);
     }
 
 }

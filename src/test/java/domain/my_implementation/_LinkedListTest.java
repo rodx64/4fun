@@ -1,6 +1,6 @@
-package domain;
+package domain.my_implementation;
 
-import domain._LinkedList;
+import domain.my_implementation._LinkedList;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

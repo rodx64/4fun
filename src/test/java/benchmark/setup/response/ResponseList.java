@@ -11,70 +11,65 @@ public class ResponseList extends Response {
     protected final static List<Integer> arrayList = new ArrayList<>();
     protected final static List<Integer> linkedList = new LinkedList<>();
 
-    protected static void putOnAddList(List<Integer> list){
-        startTime = System.nanoTime();
+    protected static void addAll(List<Integer> list) {
+        startTime = System.currentTimeMillis();
         for (int i = 0; i < MAX_SIZE; i++) {
             list.add(i);
         }
-        endTime = System.nanoTime();
+        endTime = System.currentTimeMillis();
         duration = (endTime - startTime);
-        insertMap.put(list.getClass().getSimpleName(), duration);
+        insert.put(list.getClass().getSimpleName(), duration);
     }
 
-    protected static void putOnFirstPositionList(List<Integer> list){
-        startTime = System.nanoTime();
+    protected static void addByIndex(List<Integer> list) {
+        startTime = System.currentTimeMillis();
         list.add(0, MAX_SIZE + 1);
-        endTime = System.nanoTime();
+        endTime = System.currentTimeMillis();
         duration = (endTime - startTime);
-        insertFirstMap.put(list.getClass().getSimpleName(), duration);
+        insertFirst.put(list.getClass().getSimpleName(), duration);
     }
 
     /**
-     *  If you look in the worst case (MAX_SIZE), both lists could be faster. Because both will need to touch all
+     * If you look in the worst case (MAX_SIZE), both lists could be faster. Because both will need to touch all
      */
-    protected static void putOnGetList(List<Integer> list){
-        startTime = System.nanoTime();
-        list.get(MAX_SIZE / 4);
-        endTime = System.nanoTime();
+    protected static void getByIndex(List<Integer> list) {
+        int index = MAX_SIZE / 4;
+        startTime = System.currentTimeMillis();
+        list.get(index);
+        endTime = System.currentTimeMillis();
         duration = (endTime - startTime);
-        readMapByIndex.put(list.getClass().getSimpleName(), duration);
+        readByIndex.put(list.getClass().getSimpleName(), duration);
     }
 
-    protected static void putOnGetListByValue(List<Integer> list){
-        startTime = System.nanoTime();
-        list.contains(MAX_SIZE / 4);
-        endTime = System.nanoTime();
+    protected static void contains(List<Integer> list) {
+        int index = MAX_SIZE / 4;
+        startTime = System.currentTimeMillis();
+        list.contains(index);
+        endTime = System.currentTimeMillis();
         duration = (endTime - startTime);
-        readMapByValue.put(list.getClass().getSimpleName(), duration);
+        readByValue.put(list.getClass().getSimpleName(), duration);
     }
 
-   protected static void putOnRemoveFirstList(List<Integer> list){
-        startTime = System.nanoTime();
+    protected static void removeFirst(List<Integer> list) {
+        startTime = System.currentTimeMillis();
         list.remove(0);
-        endTime = System.nanoTime();
+        endTime = System.currentTimeMillis();
         duration = (endTime - startTime);
-        deleteFirstMap.put(list.getClass().getSimpleName(), duration);
+        deleteFirst.put(list.getClass().getSimpleName(), duration);
     }
 
-    protected static void putOnRemoveLastList(List<Integer> list){
+    protected static void removeLast(List<Integer> list) {
         int last = list.size() - 1;
         if(list instanceof LinkedList){
-            startTime = System.nanoTime();
+            startTime = System.currentTimeMillis();
             ((LinkedList<Integer>) list).removeLast();
         } else {
-            startTime = System.nanoTime();
+            startTime = System.currentTimeMillis();
             list.remove(last);
         }
-        endTime = System.nanoTime();
+        endTime = System.currentTimeMillis();
         duration = (endTime - startTime);
-        deleteLastMap.put(list.getClass().getSimpleName(), duration);
+        deleteLast.put(list.getClass().getSimpleName(), duration);
     }
 
-    protected static void putOnRemoveMiddleList(List<Integer> list){
-        startTime = System.nanoTime();
-        list.remove(MAX_SIZE / 2);
-        endTime = System.nanoTime();
-        duration = (endTime - startTime);
-        deleteMiddleMap.put(list.getClass().getSimpleName(), duration);
-    }
 }
